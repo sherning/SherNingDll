@@ -11,6 +11,23 @@ namespace SherNingMultiChartsLib
     {
         public static void Main()
         {
+            MultiChartTestPad.Main();
+        }
+
+        // Various Test Methods
+        #region Test Methods
+        private static void Transform(int num)
+        {
+            // ref is two way reference
+            // out is one way from callee to caller
+            // standard is one way, from caller to callee
+        }
+
+        public static DateTime GetLondonTime()
+        {
+            DateTime currTime = DateTime.Now;
+            TimeZoneInfo britishZone = TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time");
+            return TimeZoneInfo.ConvertTime(currTime, TimeZoneInfo.Local, britishZone);
         }
 
         private static void StaticPropertyTest()
@@ -97,5 +114,6 @@ namespace SherNingMultiChartsLib
                 Console.WriteLine(hma.Value);
             }
         }
+        #endregion
     }
 }
